@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Select</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 150vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 80vw;
+    }
+
+    .character {
+      position: relative;
+      width: 200px;
+      height: 250px;
+      border: 3px solid transparent;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .character img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .character:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    .character.selected {
+      border-color: gold;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose Your Characters</h1>
+  <div class="grid">
+    <!-- Repeat 12 character slots -->
+    <div class="character"><img src="Paladin Danse.png" alt="Character 1" /></div>
+    <div class="character"><img src="Nick Valentine.png" alt="Character 2" /></div>
+    <div class="character"><img src="Codsworth But Better.webp" alt="Character 3" /></div>
+    <div class="character"><img src="Magnolia.png" alt="Character 4" /></div>
+    <div class="character"><img src="DiMA.webp" alt="Character 5" /></div>
+    <div class="character"><img src="Dogmeat.png" alt="Character 6" /></div>
+    <div class="character"><img src="Billy.png" alt="Character 7" /></div>
+    <div class="character"><img src="Preston Garvey.png" alt="Character 8" /></div>
+    <div class="character"><img src="Mysterious Stranger.png" alt="Character 9" /></div>
+    <div class="character"><img src="Exiled_Raider-removebg-preview.png" alt="Character 10" /></div>
+    <div class="character"><img src="Vault_Technician__2_-removebg-preview.png" alt="Character 11" /></div>
+    <div class="character"><img src="Moe Cronin.webp" alt="Character 12" /></div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".character").forEach((char) => {
+      char.addEventListener("click", () => {
+        char.classList.toggle("selected");
+      });
+    });
+  </script>
+</body>
+</html>
